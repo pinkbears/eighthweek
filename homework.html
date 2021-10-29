@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			{
+			document.write('<h2>练习题4第1题</h2>');
+			function test(...arr){
+				let str='';
+				str=arr.reverse().join('.');
+				return str;
+			}
+			document.write(test('aa','bb','cc',));
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题4第2题</h2>');
+			document.write('没做出效果，注释里有些失败的代码');
+			// function exchange(...arr){
+			// 	let a='';
+			// 	str=arr.replace('4','/*');
+			// 	return a;
+			// }
+			// document.write(exchange(1.2.3.4));
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题4第3题</h2>');
+			let f=new Date();
+			let mon=['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+			let week='日一二三四五六';
+			document.write(`${f.getFullYear()}年${mon[f.getMonth()]}月${f.getDate()}日,
+			${f.getHours()}:${f.getMinutes()}:${f.getSeconds()},星期${week[f.getDay()]}`);
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题4第4题</h2>');
+			let aa='a';
+			if(aa.length>=2&&aa.length<=10){
+				document.write(aa);
+				document.write(' '+' '+' '+'字符串长度符合要求');
+			}else{
+				document.write(aa);
+				document.write(' '+' '+' '+'字符串长度不符合要求');
+			}
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题5第1题</h2>');
+			let [a,b,c,d,e]=[1,2,3,4,5];
+			let max=Math.max((Math.max(a,Math.max(b,c)),d),e);
+			let min=Math.min((Math.min(a,Math.min(b,c)),d),e);
+			document.write('最大值为:'+max);
+			document.write(' '+' '+' '+'最小值为:'+min);
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题5第2题</h2>');
+			let code;
+			let codelength=4;
+			let s='0123456789';
+			code="";
+			for(let i=0;i<codelength;i++){
+				let num=Math.floor(Math.random()*10);
+				code+=s[num];
+			}
+			document.write(code);
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>练习题5第3题</h2>');
+			let j='s123';
+			if(j.charAt(0)=='-'||j.charAt(0)=='$'||j.charAt(0)=='a'||j.charAt(0)=='b'||j.charAt(0)=='c'||j.charAt(0)=='d'||j.charAt(0)=='e'
+			||j.charAt(0)=='g'||j.charAt(0)=='h'||j.charAt(0)=='i'||j.charAt(0)=='j'||j.charAt(0)=='k'||j.charAt(0)=='l'||j.charAt(0)=='m'
+			||j.charAt(0)=='n'||j.charAt(0)=='o'||j.charAt(0)=='p'||j.charAt(0)=='q'||j.charAt(0)=='r'||j.charAt(0)=='s'||j.charAt(0)=='t'
+			||j.charAt(0)=='u'||j.charAt(0)=='v'||j.charAt(0)=='w'||j.charAt(0)=='x'||j.charAt(0)=='y'||j.charAt(0)=='z'){
+				document.write('字符串符合要求');
+			}else{
+				document.write('字符串不符合要求');
+			}
+			document.write('<hr>');
+			}
+			
+			{
+			document.write('<h2>页面实时更新时间</h2>')
+			document.write('没做出效果，注释里有些失败的代码');
+			// setInterval("update()",1000);
+			// function update(){
+			// let k=new Date();
+			// let mons=['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+			// let weeks='日一二三四五六';
+			// document.write(`${k.getFullYear()}年${mons[k.getMonth()]}月${k.getDate()}日,
+			// ${k.getHours()}:${k.getMinutes()}:${k.getSeconds()},星期${weeks[k.getDay()]}`);
+			// }
+			document.write('<hr>');
+			}
+			
+			document.write('<h2>四则运算</h2>');
+			</script>
+			
+			<input value=" " class="first">
+			<select id="option">
+				<option value="jia">+</option>
+				<option value="jian">-</option>
+				<option value="cheng">*</option>
+				<option value="chu">/</option>
+				<option></option>
+			</select>
+			<input value=" " class="second">
+			<button>=</button>
+			<input value=" " class="result">
+			
+			<script>
+				let first=document.querySelector('.first');
+				let second=document.querySelector('.second');
+				let option= document.querySelector('#option');
+				let result=document.querySelector('.result');
+				let btn=document.querySelector('button');
+				btn.onclick = () => {
+					let m=Number(first.value);
+					let n=Number(second.value);
+					if(first.value==' '||second.value==' '){
+						alert('输入框中内容为空');
+						}else if(isNaN(m)||isNaN(n)){
+						alert('输入框中内容不是数字');
+						}
+					if(option.value==='chu' && n===0){
+						alert('除数不能为0');
+						}
+					switch (option.value){
+					case 'jia':
+					result.value = m+n;
+					break;
+					case 'jian':
+					result.value =m-n;
+					break;
+					case 'cheng':
+					result.value =m*n;
+					break;
+					case 'chu':
+					result.value = m/n;
+					break;
+					}
+				}
+				document.write('<hr>');
+				</script>
+	</body>
+</html>
